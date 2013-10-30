@@ -1,6 +1,11 @@
-<h3><%= spider.name %> The Spider</h3>
+<h3><%= link_to spider.name, spider_path( spider ) %> The Spider</h3>
 
 <ul>
 	<li>Number of Legs: <%= spider.legs %></li>
 	<li>Color: <%= spider.color %></li>
 </ul>
+
+<small>
+<%= link_to "[delete]", spider_path(spider), method: :delete %>
+<%= link_to "[edit]", edit_spider_path(spider) %>
+</small>

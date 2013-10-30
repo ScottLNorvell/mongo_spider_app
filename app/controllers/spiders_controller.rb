@@ -14,6 +14,7 @@ class SpidersController < ApplicationController
 
 	def create
 		Spider.create params[:spider]
+		redirect_to spiders_path
 	end
 
 	def edit
@@ -27,8 +28,9 @@ class SpidersController < ApplicationController
 	end
 
 	def destroy
-		spider = Spider.find params[:spider]
+		spider = Spider.find params[:id]
 		spider.destroy
+		redirect_to spiders_path
 	end
 
 end

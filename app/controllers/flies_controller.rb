@@ -14,6 +14,7 @@ class FliesController < ApplicationController
 
 	def create
 		Fly.create params[:fly]
+		redirect_to flies_path
 	end
 
 	def edit
@@ -27,8 +28,9 @@ class FliesController < ApplicationController
 	end
 
 	def destroy
-		fly = Fly.find params[:fly]
+		fly = Fly.find params[:id]
 		fly.destroy
+		redirect_to flies_path
 	end
 	
 end

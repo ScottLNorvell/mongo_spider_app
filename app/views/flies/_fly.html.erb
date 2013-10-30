@@ -1,4 +1,4 @@
-<h3><%= fly.name %> The Fly</h3>
+<h3><%= link_to fly.name, fly_path( fly ) %> The Fly</h3>
 
 <% if fly.trapped %>
 
@@ -9,3 +9,8 @@
 <p>I am flying free and EZ!</p>
 
 <% end %>
+
+<small>
+<%= link_to "[delete]", fly_path(fly), method: :delete %>
+<%= link_to "[edit]", edit_fly_path(fly) %>
+</small>

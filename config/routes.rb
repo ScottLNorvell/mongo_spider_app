@@ -1,5 +1,5 @@
 SpiderApp::Application.routes.draw do
-  root to: 'spiders#index'
+  root to: 'welcome#index'
 
   resources :spiders
   resources :webs

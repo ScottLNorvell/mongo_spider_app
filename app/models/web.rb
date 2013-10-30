@@ -1,5 +1,8 @@
-class Web < ActiveRecord::Base
-  attr_accessible :name, :size, :spider_id
+class Web 
+	include Mongoid::Document
+
+  field :name, type: String
+  field :size, type: String
 
   belongs_to :spider 
 end

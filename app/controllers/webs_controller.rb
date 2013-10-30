@@ -14,6 +14,7 @@ class WebsController < ApplicationController
 
 	def create
 		Web.create params[:web]
+		redirect_to webs_path
 	end
 
 	def edit
@@ -23,12 +24,13 @@ class WebsController < ApplicationController
 	def update
 		web = Web.find params[:id]
 		web.update_attributes params[:web]
-		redirect_to webs_path
+		redirect_to web_path web 
 	end
 
 	def destroy
-		web = Web.find params[:web]
+		web = Web.find params[:id]
 		web.destroy
+		redirect_to webs_path
 	end
 	
 end
